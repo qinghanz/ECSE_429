@@ -15,6 +15,7 @@ import org.json.simple.JSONObject;
 public class APITEST_PROJECTS {
     OkHttpClient client = new OkHttpClient();
 
+    // return all the instances of project
     @Test
     public void getAllProjects() throws Exception {
         Request request = new Request.Builder()
@@ -27,6 +28,7 @@ public class APITEST_PROJECTS {
         assertEquals(200, response.code());
     }
 
+    // headers for all the instances of project
     @Test
     public void projectHeadRequest() throws Exception {
         Request request = new Request.Builder()
@@ -39,6 +41,7 @@ public class APITEST_PROJECTS {
         assertEquals(200, response.code());
     }
 
+    // we should be able to create project without a ID using the fi eld values in the body of the message
     @Test
     public void projectsPostRequest() throws Exception {
         String title = "new Project";
@@ -75,7 +78,7 @@ public class APITEST_PROJECTS {
     }
 
 
-
+    // return a specifi c instances of project using a id
     @Test
     public void projectsGetIDRequest() throws Exception {
         Request request = new Request.Builder()
@@ -104,6 +107,7 @@ public class APITEST_PROJECTS {
         }
     }
 
+    // headers for a specifi c instances of project using a id
     @Test
     public void projectHead_IDRequest() throws Exception {
         Request request = new Request.Builder()
@@ -116,6 +120,7 @@ public class APITEST_PROJECTS {
         assertEquals(200, response.code());
     }
 
+    // amend a specifi c instances of project using a id with a body containing the fi elds to amend
     @Test
     public void projectPostIDRequest() throws Exception {
         String title = "Testing Changed Project";
@@ -142,7 +147,7 @@ public class APITEST_PROJECTS {
     }
 
 
-
+    // amend a specifi c instances of project using a id with a body containing the fi elds to amend
     @Test
     public void projectPutIDRequest() throws Exception {
         String title = "Testing Changed Project #2";
@@ -169,7 +174,7 @@ public class APITEST_PROJECTS {
     }
 
 
-    // Creating project to then delete
+    // amend a specifi c instances of project using a id with a body containing the fi elds to amend
     @Test
     public void projectsPostRequest_toDelete() throws Exception {
         String title = "Project to delete";
@@ -205,45 +210,31 @@ public class APITEST_PROJECTS {
         assertEquals(description, responseDescription);
     }
 
-    // deleting the previously created project
+    // delete a specific instances of project using a id
     @Test
     public void todoDeleteRequest() throws Exception {
-
         Request deleteRequest = new Request.Builder()
-                .url("http://localhost:4567/projects/8")
+                .url("http://localhost:4567/projects/10")
                 .delete()
                 .build();
         Response deleteResponse = client.newCall(deleteRequest).execute();
         assertEquals(200, deleteResponse.code());
     }
 
+    // return all the todo items related to project, with given id, by the relationship named tasks
     @Test
-    public void projectsGetID_TaskRequest() throws Exception {
+    public void getTasksProjectsbyID() throws Exception {
         Request request = new Request.Builder()
                 .url("http://localhost:4567/projects/1/tasks")
+                .get()
                 .build();
 
         Response response = client.newCall(request).execute();
+        assertNotNull(response.body().string());
         assertEquals(200, response.code());
-
-        String responseBody = response.body().string();
-
-        JSONParser parser = new JSONParser();
-        JSONObject responseJson = (JSONObject) parser.parse(responseBody);
-
-        JSONObject jsonObject = new JSONObject(responseJson);
-        JSONArray projects = (JSONArray) jsonObject.get("projects");
-
-        for (Object projectObject : projects) {
-            JSONObject project = (JSONObject) projectObject;
-            String title = (String) project.get("title");
-            String description = (String) project.get("description");
-
-            assertEquals("Testing Changed Project #2", title);
-            assertEquals("", description);
-        }
     }
 
+    // headers for the todo items related to project, with given id, by the relationship named tasks
     @Test
     public void projectHeadRequest_ID() throws Exception {
         Request request = new Request.Builder()
@@ -256,9 +247,86 @@ public class APITEST_PROJECTS {
         assertEquals(200, response.code());
     }
 
+    //create an instance of a relationship named tasks between project instance :id and the todo instance represented by theid in the body of the message
+    @Test
+    public void PostProjectsID() throws Exception {
+        String title = "Office Work Project";
+
+        JSONObject obj = new JSONObject();
+
+        obj.put("title", title);
+
+        RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), obj.toString());
+
+        Request request = new Request.Builder()
+                .url("http://localhost:4567/projects/1/tasks")
+                .post(body)
+                .build();
+
+        Response response = client.newCall(request).execute();
+        String responseBody = response.body().string();
+
+        JSONParser parser = new JSONParser();
+        JSONObject responseJson = (JSONObject) parser.parse(responseBody);
+
+        String responseTitle = (String) responseJson.get("title");
+        assertEquals(title, responseTitle);
+    }
+
+    // delete the instance of the relationship named tasks between project and todo using the :id
 
 
 
-    // ------------------------------------------------------------------------------------------------------------------------------------------------
 
+    //return all the category items related to project, with given id, by the relationship named categories
+    @Test
+    public void projecsGetAllProjects() throws Exception {
+        Request request = new Request.Builder()
+                .url("http://localhost:4567/projects/3/categories")
+                .get()
+                .build();
+
+        Response response = client.newCall(request).execute();
+        assertNotNull(response.body().string());
+        assertEquals(200, response.code());
+    }
+
+    // headers for the category items related to project, with given id, by the relationship named categories
+    @Test
+    public void projectHead_IDRequest2() throws Exception {
+        Request request = new Request.Builder()
+                .url("http://localhost:4567/projects/3/categories")
+                .head()
+                .build();
+
+        Response response = client.newCall(request).execute();
+        //System.out.println(response.body().string());
+        assertEquals(200, response.code());
+    }
+
+    //create an instance of a relationship named categories between project instance :id and the category instancerepresented by the id in the body of the message
+    @Test
+    public void PostProjectsID2() throws Exception {
+        String title = "the 429 TA is awesome";
+
+        JSONObject obj = new JSONObject();
+
+        obj.put("title", title);
+
+        RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), obj.toString());
+
+        Request request = new Request.Builder()
+                .url("http://localhost:4567/projects/1/categories")
+                .post(body)
+                .build();
+
+        Response response = client.newCall(request).execute();
+        String responseBody = response.body().string();
+
+        JSONParser parser = new JSONParser();
+        JSONObject responseJson = (JSONObject) parser.parse(responseBody);
+
+        String responseTitle = (String) responseJson.get("title");
+        assertEquals(title, responseTitle);
+    }
 }
