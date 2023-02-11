@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a63e13e5-bbd5-44ad-8187-fa115d76af23" name="Default Changelist" comment="" />
+    <list default="true" id="a63e13e5-bbd5-44ad-8187-fa115d76af23" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/APITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/APITest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,7 +83,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunManager" selected="Gradle.Tests in 'ECSE_429'">
     <configuration name="APICategoryTest.categoriesDeleteOfRequest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -125,6 +128,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+<<<<<<< HEAD
     <configuration name="APICategoryTest.categoryPostProjectIDTodos" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -167,6 +171,8 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+=======
+>>>>>>> 844250bd14ecd43fab56c2e04d51b4152c752abc
     <configuration name="Tests in 'ECSE_429'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -191,10 +197,15 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.Tests in 'ECSE_429'" />
+<<<<<<< HEAD
         <item itemvalue="Gradle.APICategoryTest.categoriesDeleteOfRequest" />
         <item itemvalue="Gradle.APICategoryTest.categoryPostProjectIDTodos" />
         <item itemvalue="Gradle.APICategoryTest.todoCategoryProjectsHeadRequest" />
         <item itemvalue="Gradle.APICategoryTest.categoryGetAllProjects" />
+=======
+        <item itemvalue="Gradle.APITest" />
+        <item itemvalue="Gradle.APITest.testGetMethod" />
+>>>>>>> 844250bd14ecd43fab56c2e04d51b4152c752abc
       </list>
     </recent_temporary>
   </component>
