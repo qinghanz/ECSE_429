@@ -1,7 +1,3 @@
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-
 import okhttp3.*;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -11,7 +7,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 //import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class APITest {
+public class APITest_todos {
     OkHttpClient client = new OkHttpClient();
 
     @Test
