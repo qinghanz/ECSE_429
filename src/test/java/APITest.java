@@ -283,10 +283,10 @@ public class APITest {
         String todoId = (String) responseJson.get("id");
 
         Request deleteRequest = new Request.Builder()
-                .url("http://localhost:4567/todos/1/todos/" + todoId)
+                .url("http://localhost:4567/todos/1/tasksof/" + todoId)
                 .delete()
                 .build();
         Response deleteResponse = client.newCall(deleteRequest).execute();
-        //assertEquals(200, deleteResponse.code());
+        assertEquals(200, deleteResponse.code());
     }
 }
