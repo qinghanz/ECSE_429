@@ -83,12 +83,12 @@
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RunManager" selected="Gradle.Tests in 'ECSE_429'">
-    <configuration name="APITest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="APICategoryTest.categoriesDeleteOfRequest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;APITest&quot;" />
+        <option name="scriptParameters" value="--tests &quot;APICategoryTest.categoriesDeleteOfRequest&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -104,12 +104,12 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="APITest.testGetMethod" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="APICategoryTest.categoryGetAllProjects" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;APITest.testGetMethod&quot;" />
+        <option name="scriptParameters" value="--tests &quot;APICategoryTest.categoryGetAllProjects&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -125,12 +125,33 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="APITest.todoTaskOfRequest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="APICategoryTest.categoryPostProjectIDTodos" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;APITest.todoTaskOfRequest&quot;" />
+        <option name="scriptParameters" value="--tests &quot;APICategoryTest.categoryPostProjectIDTodos&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="APICategoryTest.todoCategoryProjectsHeadRequest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;APICategoryTest.todoCategoryProjectsHeadRequest&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -170,9 +191,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.Tests in 'ECSE_429'" />
-        <item itemvalue="Gradle.APITest.todoTaskOfRequest" />
-        <item itemvalue="Gradle.APITest" />
-        <item itemvalue="Gradle.APITest.testGetMethod" />
+        <item itemvalue="Gradle.APICategoryTest.categoriesDeleteOfRequest" />
+        <item itemvalue="Gradle.APICategoryTest.categoryPostProjectIDTodos" />
+        <item itemvalue="Gradle.APICategoryTest.todoCategoryProjectsHeadRequest" />
+        <item itemvalue="Gradle.APICategoryTest.categoryGetAllProjects" />
       </list>
     </recent_temporary>
   </component>
