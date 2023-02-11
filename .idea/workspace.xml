@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a63e13e5-bbd5-44ad-8187-fa115d76af23" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/APITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/APITest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/APITEST_PROJECTS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/APITEST_PROJECTS.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,11 +64,17 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
   <component name="GithubPullRequestsUISettings">
-    <option name="hiddenUrls">
-      <set>
-        <option value="https://github.com/qinghanz/ECSE_429" />
-      </set>
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="ca9bc6e2-380a-4153-ab4b-537ca82f583e" />
+        <option name="url" value="https://github.com/qinghanz/ECSE_429" />
+      </UrlAndAccount>
     </option>
   </component>
   <component name="ProjectId" id="2LSJdJ8ywjodC43nySpXzKqYPKY" />
@@ -77,27 +83,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
-  </component>
-  <component name="RunManager" selected="Gradle.Tests in 'ECSE_429'">
-    <configuration name="APITest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "node.js.selected.package.tslint": "(autodetect)"
+  }
+}]]></component>
+  <component name="RunManager" selected="Gradle.APITEST_PROJECTS.projectHeadRequest_ID">
+    <configuration name="APITEST_PROJECTS" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;APITest&quot;" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
             <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;APITEST_PROJECTS&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -107,18 +112,20 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="APITest.testGetMethod" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="APITEST_PROJECTS.getAllProjects" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;APITest.testGetMethod&quot;" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
             <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;APITEST_PROJECTS.getAllProjects&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -128,18 +135,66 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="Tests in 'ECSE_429'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="APITEST_PROJECTS.projectHeadRequest_ID" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests *" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
             <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;APITEST_PROJECTS.projectHeadRequest_ID&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="APITEST_PROJECTS.projectsGetIDRequest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;APITEST_PROJECTS.projectsGetIDRequest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="APITEST_PROJECTS.projectsGetID_TaskRequest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;APITEST_PROJECTS.projectsGetID_TaskRequest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -151,9 +206,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.Tests in 'ECSE_429'" />
-        <item itemvalue="Gradle.APITest" />
-        <item itemvalue="Gradle.APITest.testGetMethod" />
+        <item itemvalue="Gradle.APITEST_PROJECTS.projectHeadRequest_ID" />
+        <item itemvalue="Gradle.APITEST_PROJECTS.projectsGetID_TaskRequest" />
+        <item itemvalue="Gradle.APITEST_PROJECTS" />
+        <item itemvalue="Gradle.APITEST_PROJECTS.projectsGetIDRequest" />
+        <item itemvalue="Gradle.APITEST_PROJECTS.getAllProjects" />
       </list>
     </recent_temporary>
   </component>
@@ -178,7 +235,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
