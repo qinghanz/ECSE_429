@@ -10,6 +10,17 @@ import org.json.simple.JSONObject;
 public class APITest_projects {
     OkHttpClient client = new OkHttpClient();
 
+    @Test
+    public void testGeneralSetup() throws Exception {
+        Request request = new Request.Builder()
+                .url("http://localhost:4567/")
+                .build();
+
+        try (Response response = client.newCall(request).execute()) {
+            assertEquals(response.code(), 200);
+        }
+    }
+
     // return all the instances of project
     @Test
     public void getAllProjects() throws Exception {
@@ -97,7 +108,7 @@ public class APITest_projects {
             String description = (String) project.get("description");
 
             // should i be using the Booleans?
-            assertEquals("Testing Changed Project #2", title);
+            assertEquals("Testing Changed Project", title);
             assertEquals("", description);
         }
     }
