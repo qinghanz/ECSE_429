@@ -952,5 +952,18 @@ public class APITestAll {
         Response deleteResponse = client.newCall(deleteRequest).execute();
         assertEquals(200, deleteResponse.code());
     }
+
+    @AfterAll
+    public static void checkApiShutdown() {
+        OkHttpClient client = new OkHttpClient();
+        Request request = new Request.Builder()
+                .url("http://localhost:4567/shutdown")
+                .build();
+        try {
+            Response response = client.newCall(request).execute();
+            assertNotEquals(200, response.code(), "API should not be available after shutdown");
+        } catch (IOException e) {
+        }
+    }
 }
 
