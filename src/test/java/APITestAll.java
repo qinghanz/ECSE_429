@@ -28,6 +28,7 @@ public class APITestAll {
         }
     }
 
+    // return all the instances of todo
     @Test
     public void todoGetAllRequest() throws Exception {
         Request request = new Request.Builder()
@@ -40,6 +41,7 @@ public class APITestAll {
         assertEquals(200, response.code());
     }
 
+    // headers for all the instances of todo
     @Test
     public void todoHeadRequest() throws Exception {
         Request request = new Request.Builder()
@@ -52,6 +54,7 @@ public class APITestAll {
         assertEquals(200, response.code());
     }
 
+    // we should be able to create todo without a ID using the field values in the body of the message
     @Test
     public void todoPostRequest() throws Exception {
         String title = "Random Project";
@@ -84,6 +87,7 @@ public class APITestAll {
         assertEquals(description, responseDescription);
     }
 
+    // return a specific instances of todo using a id
     @Test
     public void todoGetIDRequest() throws Exception {
         Request request = new Request.Builder()
@@ -110,6 +114,7 @@ public class APITestAll {
         }
     }
 
+    // amend a specific instances of todo using a id with a body containing the fields to amend
     @Test
     public void todoPostIDRequest() throws Exception {
         String title = "Random Changed Project";
@@ -135,6 +140,7 @@ public class APITestAll {
         assertEquals(title, responseTitle);
     }
 
+    // amend a specific instances of todo using a id with a body containing the fields to amend
     @Test
     public void todoPutIDRequest() throws Exception {
         String title = "Random Changed Project Again";
@@ -160,6 +166,7 @@ public class APITestAll {
         assertEquals(title, responseTitle);
     }
 
+    // delete a specific instances of todo using a id
     @Test
     public void todoDeleteRequest() throws Exception {
         String title = "Random Project to Delete";
@@ -193,6 +200,7 @@ public class APITestAll {
         assertEquals(200, deleteResponse.code());
     }
 
+    // delete a specific instances of todo using a id
     @Test
     public void todoDeleteCategoryRequest() throws Exception {
         String title = "Random Project to Delete";
@@ -226,6 +234,7 @@ public class APITestAll {
         assertEquals(200, deleteResponse.code());
     }
 
+    // return all the category items related to todo, with given id, by the relationship named categories
     @Test
     public void todoGetAllTasksOf() throws Exception {
         Request request = new Request.Builder()
@@ -238,6 +247,8 @@ public class APITestAll {
         assertEquals(200, response.code());
     }
 
+
+    // create an instance of a relationship named categories between todo instance :id and the category instance represented by the id in the body of the message
     @Test
     public void todoPostIDTaskOfRequest() throws Exception {
         String title = "Office Work";
@@ -263,6 +274,7 @@ public class APITestAll {
         assertEquals(title, responseTitle);
     }
 
+    // delete the instance of the relationship named categories between todo and category using the :id
     @Test
     public void todoDeleteOfRequest() throws Exception {
         String title = "Office Work";
@@ -400,7 +412,7 @@ public class APITestAll {
         assertEquals(200, response.code());
     }
 
-    // amend a specifi c instances of project using a id with a body containing the fi elds to amend
+    // amend a specific instances of project using a id with a body containing the fi elds to amend
     @Test
     public void projectPostIDRequest() throws Exception {
         String title = "Testing Changed Project";
@@ -427,7 +439,7 @@ public class APITestAll {
     }
 
 
-    // amend a specifi c instances of project using a id with a body containing the fi elds to amend
+    // amend a specific instances of project using a id with a body containing the fi elds to amend
     @Test
     public void projectPutIDRequest() throws Exception {
         String title = "Testing Changed Project #2";
@@ -454,7 +466,7 @@ public class APITestAll {
     }
 
 
-    // amend a specifi c instances of project using a id with a body containing the fi elds to amend
+    // amend a specific instances of project using a id with a body containing the fi elds to amend
     @Test
     public void projectsPostRequest_toDelete() throws Exception {
         String title = "Project to delete";
@@ -635,6 +647,7 @@ public class APITestAll {
         assertEquals(title, responseTitle);
     }
 
+    // return all the instances of category
     @Test
     public void todoGetAllCategoryRequest() throws Exception {
         Request request = new Request.Builder()
@@ -647,6 +660,7 @@ public class APITestAll {
         assertEquals(200, response.code());
     }
 
+    // headers for all the instances of category
     @Test
     public void todoCategoryHeadRequest() throws Exception {
         Request request = new Request.Builder()
@@ -659,6 +673,7 @@ public class APITestAll {
         assertEquals(200, response.code());
     }
 
+    // we should be able to create category without a ID using the field values in the body of the message
     @Test
     public void categoryPostRequest() throws Exception {
         String title = "Random Project";
@@ -689,6 +704,7 @@ public class APITestAll {
         assertEquals(description, responseDescription);
     }
 
+    // return a specific instances of category using a id
     @Test
     public void categoryGetIDRequest() throws Exception {
         Request request = new Request.Builder()
@@ -715,6 +731,8 @@ public class APITestAll {
         }
     }
 
+
+    // amend a specific instances of category using a id with a body containing the fields to amend
     @Test
     public void categoryPostIDRequest() throws Exception {
         String title = "Random Changed Project";
@@ -740,6 +758,7 @@ public class APITestAll {
         assertEquals(title, responseTitle);
     }
 
+    // amend a specific instances of category using a id with a body containing the fields to amend
     @Test
     public void categoryPutIDRequest() throws Exception {
         String title = "Random Changed Project Again";
@@ -765,6 +784,7 @@ public class APITestAll {
         assertEquals(title, responseTitle);
     }
 
+    // delete a specific instances of category using a id
     @Test
     public void deleteCategoryRequest() throws Exception {
         String title = "Random Project to Delete";
@@ -798,6 +818,8 @@ public class APITestAll {
         assertEquals(200, deleteResponse.code());
     }
 
+
+    // return all the project items related to category, with given id, by the relationship named projects
     @Test
     public void categoryGetAllTodos() throws Exception {
         Request request = new Request.Builder()
@@ -810,6 +832,7 @@ public class APITestAll {
         assertEquals(200, response.code());
     }
 
+    // create an instance of a relationship named projects between category instance :id and the project instance represented by the id in the body of the message
     @Test
     public void categoryPostIDTodos() throws Exception {
         String title = "Office Work";
@@ -835,6 +858,7 @@ public class APITestAll {
         assertEquals(title, responseTitle);
     }
 
+    // delete the instance of the relationship named projects between category and project using the :id
     @Test
     public void categoryDeleteOfRequest() throws Exception {
         String title = "Office Work";
@@ -865,6 +889,7 @@ public class APITestAll {
         assertEquals(200, deleteResponse.code());
     }
 
+    // return all the todo items related to category, with given id, by the relationship named todos
     @Test
     public void categoryGetAllProjects() throws Exception {
         Request request = new Request.Builder()
@@ -877,6 +902,7 @@ public class APITestAll {
         assertEquals(200, response.code());
     }
 
+    // headers for the todo items related to category, with given id, by the relationship named todos
     @Test
     public void todoCategoryProjectsHeadRequest() throws Exception {
         Request request = new Request.Builder()
@@ -889,6 +915,7 @@ public class APITestAll {
         assertEquals(200, response.code());
     }
 
+    // create an instance of a relationship named todos between category instance :id and the todo instance represented by the id in the body of the message
     @Test
     public void categoryPostProjectIDTodos() throws Exception {
         String title = "Office Work Project";
@@ -914,6 +941,7 @@ public class APITestAll {
         assertEquals(title, responseTitle);
     }
 
+    // delete the instance of the relationship named todos between category and todo using the :id
     @Test
     public void categoriesDeleteOfRequest() throws Exception {
         String title = "Office Work Project";
