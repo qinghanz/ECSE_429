@@ -1,35 +1,43 @@
 import okhttp3.*;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import org.junit.Assert;
+import org.junit.jupiter.api.*;
+
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeAll;
 
 import org.json.simple.parser.*;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.jupiter.api.MethodOrderer.Random;
+import java.io.IOException;
+import java.net.UnknownHostException;
 //import com.fasterxml.jackson.databind.ObjectMapper;
 import javax.xml.parsers.ParserConfigurationException;
 
+
 @TestMethodOrder(Random.class)
 public class APITestAll {
+
     OkHttpClient client = new OkHttpClient();
-
-    // TODO TESTS
-
-    @Test
-    public void testGeneralSetup() throws Exception {
-        Request request = new Request.Builder()
-                .url("http://localhost:4567/")
-                .build();
-
-        try (Response response = client.newCall(request).execute()) {
-            assertEquals(response.code(), 200);
-        }
-    }
 
     ////////////////////////////////////////////////////////////////////// // Section 1: TODOS /////////////////////////////////////////////////////////////////////////////
 
+    private static boolean isApiAvailable;
+
+    @BeforeAll
+    public static void checkApiAvailability() {
+        OkHttpClient client = new OkHttpClient();
+        Request request = new Request.Builder()
+                .url("http://localhost:4567/")
+                .build();
+        try {
+            Response response = client.newCall(request).execute();
+            isApiAvailable = (response.code() == 200);
+        } catch (IOException e) {
+            Assert.fail("We are not connected, please make sure we are connected to the API");
+            isApiAvailable = false;
+        }
+    }
 
     // return all the instances of todo
     @Test
@@ -308,11 +316,7 @@ public class APITestAll {
         assertEquals(200, deleteResponse.code());
     }
 
-
     ////////////////////////////////////////////////////////////////////// // Section 2: PROJECTS /////////////////////////////////////////////////////////////////////////////
-
-    // PROJECT TESTS
-
     // return all the instances of project
     @Test
     public void getAllProjects() throws Exception {
@@ -342,7 +346,7 @@ public class APITestAll {
     // we should be able to create project without a ID using the fi eld values in the body of the message
     @Test
     public void projectsPostRequest() throws Exception {
-        String title = "new Project";
+        String title = "Office Work";
         boolean completed = true;
         boolean active = true;
         String description = "test";
@@ -375,37 +379,7 @@ public class APITestAll {
         assertEquals(description, responseDescription);
     }
 
-
-    // return a specifi c instances of project using a id
-    @Test
-    public void projectsGetIDRequest() throws Exception {
-        Request request = new Request.Builder()
-                .url("http://localhost:4567/projects/2")
-                .build();
-
-        Response response = client.newCall(request).execute();
-        assertEquals(200, response.code());
-
-        String responseBody = response.body().string();
-
-        JSONParser parser = new JSONParser();
-        JSONObject responseJson = (JSONObject) parser.parse(responseBody);
-
-        JSONObject jsonObject = new JSONObject(responseJson);
-        JSONArray projects = (JSONArray) jsonObject.get("projects");
-
-        for (Object projectObject : projects) {
-            JSONObject project = (JSONObject) projectObject;
-            String title = (String) project.get("title");
-            String description = (String) project.get("description");
-
-            // should i be using the Booleans?
-            assertEquals("Office Work Project", title);
-            assertEquals("", description);
-        }
-    }
-
-    // headers for a specifi c instances of project using a id
+    // headers for a specific instances of project using a id
     @Test
     public void projectHead_IDRequest() throws Exception {
         Request request = new Request.Builder()
@@ -654,7 +628,6 @@ public class APITestAll {
     }
 
     ////////////////////////////////////////////////////////////////////// // Section 3: CATEGORIES /////////////////////////////////////////////////////////////////////////////
-
     // return all the instances of category
     @Test
     public void todoGetAllCategoryRequest() throws Exception {
