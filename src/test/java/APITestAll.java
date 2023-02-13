@@ -28,6 +28,9 @@ public class APITestAll {
         }
     }
 
+    ////////////////////////////////////////////////////////////////////// // Section 1: TODOS /////////////////////////////////////////////////////////////////////////////
+
+
     // return all the instances of todo
     @Test
     public void todoGetAllRequest() throws Exception {
@@ -304,6 +307,9 @@ public class APITestAll {
         Response deleteResponse = client.newCall(deleteRequest).execute();
         assertEquals(200, deleteResponse.code());
     }
+
+
+    ////////////////////////////////////////////////////////////////////// // Section 2: PROJECTS /////////////////////////////////////////////////////////////////////////////
 
     // PROJECT TESTS
 
@@ -646,6 +652,8 @@ public class APITestAll {
         String responseTitle = (String) responseJson.get("title");
         assertEquals(title, responseTitle);
     }
+
+    ////////////////////////////////////////////////////////////////////// // Section 3: CATEGORIES /////////////////////////////////////////////////////////////////////////////
 
     // return all the instances of category
     @Test
